@@ -22,8 +22,9 @@
 					<?php printf(__('On %s', 'origami'), get_the_date()) ?>
 					<?php if(siteorigin_setting('display_post_author')) printf(__('by %s', 'origami'), '<a href="'.get_author_posts_url(get_the_author_meta('ID')).'">'.get_the_author_meta('display_name').'</a>'); ?>
 					<?php if(siteorigin_setting('display_comment_counts') && siteorigin_setting('display_post_author')) _e('With', 'origami') ?>
-					<?php if(siteorigin_setting('display_comment_counts')) printf(__('<strong>%u</strong> Comments', 'origami'), $post->comment_count); ?>
-	
+					<?php if(siteorigin_setting('display_comment_counts')) :  ?>
+						<a href="<?php the_permalink() ?>#comments"><?php printf(__('<strong>%u</strong> Comments', 'origami'), $post->comment_count); ?></a>
+					<?php endif; ?>
 					<?php if(has_category()) :  ?>
 					- <?php the_category(', ') ?>
 					<?php endif; ?>
