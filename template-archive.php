@@ -19,7 +19,7 @@ get_header(); the_post();
 				<ul class="month_archive">
 				<?php $month_title = ""; ?>
 				<?php foreach($all_post as $each_post) : ?>
-					<?php $month = get_date_from_gmt($each_post->post_date, 'F Y') ?>
+					<?php $month = get_the_date('F Y', $each_post->ID) ?>
 					<?php if($month_title != $month) : ?>
 						<?php $month_title = $month; ?>
 						<h3><?php echo $month_title; ?></h3>
