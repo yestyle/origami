@@ -14,6 +14,13 @@
 		<div class="clear"></div>
 	</div>
 
+	<?php
+	wp_link_pages( array(
+		'before' => '<p class="page-links content">' . __('Pages:', 'origami'),
+		'after' => '</p>',
+	) )
+	?>
+
 	<?php if(is_singular()) comments_template(); ?>
 </div>
 	
